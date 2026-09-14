@@ -1,0 +1,210 @@
+:root {
+  --green: #1f6f4a;
+  --green-dark: #16512f;
+  --bg: #f5f6f4;
+  --card: #ffffff;
+  --border: #dde2de;
+  --text: #212721;
+  --muted: #6b746c;
+  --danger: #b4362f;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--green-dark);
+  color: white;
+  padding: 12px 16px;
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 16px; }
+.brand-mark { height: 26px; width: auto; flex: none; object-fit: contain; }
+.topbar-right { display: flex; align-items: center; gap: 10px; }
+.user-badge { display: flex; align-items: center; gap: 8px; font-size: 13px; }
+.user-name { opacity: 0.9; }
+.link-btn {
+  background: transparent;
+  border: none;
+  color: white;
+  text-decoration: underline;
+  padding: 0;
+  margin: 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+.link-btn:hover { background: transparent; opacity: 0.8; }
+
+.status { font-size: 12px; padding: 4px 10px; border-radius: 12px; }
+.status.ok { background: #2e8b57; }
+.status.bad { background: #8a3b34; }
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  background: var(--green);
+  padding: 6px 12px;
+}
+.nav-link {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+.nav-link:hover { background: rgba(255,255,255,0.15); opacity: 1; }
+.nav-link.active { background: rgba(255,255,255,0.25); opacity: 1; font-weight: 600; }
+
+.main { padding: 16px; max-width: 1200px; margin: 0 auto; }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+.card h2 { margin-top: 0; font-size: 18px; }
+.card h3 { margin-top: 0; font-size: 16px; }
+
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+.error { border-color: var(--danger); }
+
+label { display: block; font-size: 13px; color: var(--muted); margin: 8px 0 4px; }
+
+input, select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 14px;
+  background: white;
+  color: var(--text);
+}
+
+button {
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-right: 6px;
+  margin-top: 6px;
+}
+button:hover { background: var(--green-dark); }
+button:disabled { background: #a9b3ac; cursor: not-allowed; }
+button.secondary {
+  background: white;
+  color: var(--green-dark);
+  border: 1px solid var(--green);
+}
+button.secondary:hover { background: #eef5f0; }
+
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { padding: 8px 10px; border-bottom: 1px solid var(--border); text-align: left; }
+th { background: #f0f2ef; position: sticky; top: 0; }
+
+.table-scroll { overflow-x: auto; }
+.sticky-col { position: sticky; left: 0; background: white; z-index: 1; }
+
+.qty-input { width: 70px; padding: 4px 6px; }
+
+.row-between { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px; }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 16px; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4px 16px; }
+@media (max-width: 640px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 12px;
+  text-align: center;
+}
+@media (max-width: 800px) {
+  .summary-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.tag { font-size: 10px; padding: 2px 6px; border-radius: 8px; margin-left: 6px; }
+.tag.placeholder { background: #fbe3b0; color: #7a5200; }
+
+.period-picker select { display: inline-block; width: auto; min-width: 200px; }
+code { background: #f0f2ef; padding: 1px 5px; border-radius: 4px; }
+
+/* ---------- Login ---------- */
+.login-shell {
+  min-height: calc(100vh - 0px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+.login-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 32px 28px;
+  width: 100%;
+  max-width: 340px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(22, 81, 47, 0.08);
+}
+.login-mark { height: 56px; width: auto; margin: 0 auto 14px; display: block; object-fit: contain; }
+.login-card h1 { margin: 0; font-size: 22px; color: var(--green-dark); }
+.login-tagline { color: var(--muted); font-size: 13px; margin-bottom: 18px; }
+.login-card label { text-align: left; }
+.login-card select { margin-bottom: 6px; }
+.pin-input { text-align: center; letter-spacing: 6px; font-size: 20px; }
+.login-error { color: var(--danger); font-size: 13px; min-height: 18px; margin: 8px 0; }
+.login-hint { color: var(--muted); font-size: 12px; margin-top: 14px; }
+
+/* ---------- Dashboard ---------- */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+@media (max-width: 800px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.kpi-tile {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+}
+.kpi-label { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+.kpi-value { font-size: 24px; font-weight: 700; color: var(--green-dark); margin-top: 4px; }
+.kpi-sub { color: var(--muted); font-size: 12px; margin-top: 2px; }
+.desc { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+.trend-wrap { margin-top: 10px; }
+
+/* ---------- Bulk upload ---------- */
+.file-btn {
+  display: inline-block;
+  background: white;
+  color: var(--green-dark);
+  border: 1px solid var(--green);
+  padding: 9px 16px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.file-btn:hover { background: #eef5f0; }
